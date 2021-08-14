@@ -1,0 +1,29 @@
+{
+  "name": "Node-HW1-CLI",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "start:dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yevtushenko7/Node-HW1-CLI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yevtushenko7/Node-HW1-CLI/issues"
+  },
+  "homepage": "https://github.com/Yevtushenko7/Node-HW1-CLI#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "commander": "^8.1.0",
+    "shortid": "^2.2.16"
+  }
+}
