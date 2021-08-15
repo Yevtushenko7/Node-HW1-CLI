@@ -41,7 +41,7 @@ async function removeContact(contactId) {
 
     return filteredContacts;
   } catch (error) {
-    console.log(error.message);
+   throw error.message;
   }
 }
 
