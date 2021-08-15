@@ -27,20 +27,21 @@ async function getContactById(contactId) {
   }
 }
 
+
 async function removeContact(contactId) {
   try {
-      const contacts = await listContacts();
-      const contactInd = await contacts.findIndex((contact) => contact.id === +contactId);
-      if (!~contactInd) {
-          throw new Error(`Contact with id=${contactId} not found`);
-      }
+    const contacts = await listContacts();
 
-       const removedContact = await contacts.splice(contactInd, 1);
-      await fs.writeFile(contactsPath, JSON.stringify(contacts));
+    const filteredContacts = contacts.filter(
+      (contact) => contact.id !== Number(contactId)
+    );
 
-      return removedContact;
+    const newContactsList = JSON.stringify(filteredContacts);
+    await fs.writeFile(contactsPath, newContactsList);
+
+    return filteredContacts;
   } catch (error) {
-      throw error.message;
+    console.log(error.message);
   }
 }
 
